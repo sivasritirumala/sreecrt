@@ -1,0 +1,68 @@
+Traversing trees
+
+
+class Node:
+    def __init__(self,x):
+        self.data=x
+        self.left=None
+        self.right=None
+    def insert(self,x):
+        if self.data==None:
+            self.data=x
+            return
+        if self.data>x:
+            if self.left is None:
+                self.left=Node(x)
+            else:
+                self.left.insert(x)
+        else:
+            if self.right is None:
+                self.right=Node(x)
+            else:
+                self.right.insert(x)
+    def preorder(self):
+        print(self.data,end=" ")
+        if self.left:
+            self.left.preorder()
+        else:
+            self.right.preorder()
+    def inorder(self):
+        if self.left:
+            self.left.inorder()
+        print(self.data,end=" ")
+        if self.right:
+            self.right.inorder()
+    def postorder(self):
+        if self.left:
+            self.left.postorder()
+        if self.right:
+            self.right.postorder()
+        print(self.data,end=" ")
+root=Node(59)
+while True:
+    print()
+    print("1.insert\n2.preorder\n3.inorder\n4.postorder\n5.exit")
+    ch=int(input("choice"))
+    if ch==1:
+        x=int(input("enter element"))
+        root.insert(x)
+    elif ch==2:
+        root.preorder()
+    elif ch==3:
+        root.inorder()
+    elif ch==4:
+        root.postorder()
+    elif ch==5:
+        break
+    else:
+        print("invalid choice")
+            
+            
+            
+            
+            
+    
+    
+            
+                
+    
