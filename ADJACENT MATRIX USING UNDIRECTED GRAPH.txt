@@ -10,7 +10,7 @@ def addNode(v):
     temp=[]
     for i in range(n):
         temp.append(0)
-        graph.append(temp)
+    graph.append(temp)
 def show():
     for i in range(n):
         for j in range(n):
